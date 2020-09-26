@@ -1,25 +1,23 @@
-mod levenshtein_distance;
+use crate::levenshtein_distance::LevenshteinDistanceCalc;
 
-use levenshtein_distance::levenshtein_distance;
+mod levenshtein_distance;
 
 fn main() {
     let lines: Vec<&str> = include_str!("../sample.txt").split('\n').collect();
 
-    let benchmark = || {
-        for _ in 0..10000 {
-            let mut last_value = "";
-            for line in &lines {
-                levenshtein_distance(last_value, line);
-                last_value = line;
-            }
-        }
-    };
+    let mut leven_dist_calc = LevenshteinDistanceCalc::new();
 
     use std::time::Instant;
     let now = Instant::now();
 
     {
-        benchmark();
+        for _ in 0..10000 {
+            let mut last_value = "";
+            for line in &lines {
+                leven_dist_calc.calc(last_value, line);
+                last_value = line;
+            }
+        }
     }
 
     let elapsed = now.elapsed();
@@ -28,7 +26,7 @@ fn main() {
 
     // check
     let answers: Vec<String> = (0..lines.len() - 1)
-        .map(|i| levenshtein_distance(lines[i], lines[i + 1]))
+        .map(|i| leven_dist_calc.calc(lines[i], lines[i + 1]))
         .map(|dist| dist.to_string())
         .collect();
     eprintln!("{}", answers.join(","));
