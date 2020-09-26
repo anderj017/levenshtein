@@ -12,10 +12,12 @@ impl LevenshteinDistanceCalc {
     }
 
     fn build_cache(&mut self, target_len: usize) {
+        // if we know the max length we can pre-allocate and don't need this
+        // save a branch that'll never be called
         let alloc_size = max(self.cache.len(), target_len);
         self.cache.reserve(alloc_size);
-        self.cache.clear();
 
+        self.cache.clear();
         for i in 0..=target_len {
             self.cache.push(i);
         }
@@ -64,6 +66,8 @@ impl LevenshteinDistanceCalc {
     }
 }
 
+// for some reason this is faster than std::cmp::min (1.8sec -> 1.5sec)
+// maybe inlining is better for some reason? a bit worrying
 fn min(a: usize, b: usize) -> usize {
     if a < b {
         a
