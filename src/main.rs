@@ -27,8 +27,8 @@ fn main() {
     print!("{}", sec);
 
     // check
-    let answers: Vec<String> = (0..lines.len()-1)
-        .map(|i| levenshtein_distance(lines[i], lines[i+1]))
+    let answers: Vec<String> = (0..lines.len() - 1)
+        .map(|i| levenshtein_distance(lines[i], lines[i + 1]))
         .map(|dist| dist.to_string())
         .collect();
     eprintln!("{}", answers.join(","));
