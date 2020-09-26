@@ -38,23 +38,27 @@ impl LevenshteinDistanceCalc {
             for (j, target_char) in target.chars().enumerate() {
                 let current_dist = next_dist;
 
-                let mut dist_if_substitute = self.cache[j];
+                let mut dist_if_substitute = unsafe { self.cache.get_unchecked(j).clone() };
                 if source_char != target_char {
                     dist_if_substitute += 1;
                 }
 
                 let dist_if_insert = current_dist + 1;
-                let dist_if_delete = self.cache[j + 1] + 1;
+                let dist_if_delete = unsafe { self.cache.get_unchecked(j + 1).clone() } + 1;
 
                 next_dist = min(dist_if_delete, min(dist_if_insert, dist_if_substitute));
 
-                self.cache[j] = current_dist;
+                unsafe {
+                    *self.cache.get_unchecked_mut(j) = current_dist;
+                }
             }
 
-            self.cache[target_len] = next_dist;
+            unsafe {
+                *self.cache.get_unchecked_mut(target_len) = next_dist;
+            }
         }
 
-        self.cache[target_len]
+        unsafe { self.cache.get_unchecked(target_len).clone() }
     }
 }
 
