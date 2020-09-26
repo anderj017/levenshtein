@@ -7,6 +7,14 @@ impl LevenshteinDistanceCalc {
         Self { cache: Vec::new() }
     }
 
+    fn build_cache(&mut self, target_len: usize) {
+        self.cache.clear();
+
+        for i in 0..=target_len {
+            self.cache.push(i);
+        }
+    }
+
     pub fn calc(&mut self, source: &str, target: &str) -> usize {
         if source.is_empty() {
             return target.len();
@@ -18,7 +26,7 @@ impl LevenshteinDistanceCalc {
 
         let target_len = target.len();
 
-        self.cache = (0..=target_len).collect();
+        self.build_cache(target_len);
 
         for (i, source_char) in source.chars().enumerate() {
             let mut next_dist = i + 1;
