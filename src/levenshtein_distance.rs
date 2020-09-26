@@ -1,4 +1,5 @@
 use std::cmp::max;
+use std::num::Wrapping;
 
 pub struct LevenshteinDistanceCalc {
     cache: Vec<usize>,
@@ -7,7 +8,7 @@ pub struct LevenshteinDistanceCalc {
 impl LevenshteinDistanceCalc {
     pub fn new() -> Self {
         Self {
-            cache: Vec::with_capacity(100)
+            cache: Vec::with_capacity(100),
         }
     }
 
@@ -37,28 +38,32 @@ impl LevenshteinDistanceCalc {
         self.build_cache(target_len);
 
         for (i, source_char) in source.chars().enumerate() {
-            let mut next_dist = i + 1;
+            let mut next_dist = Wrapping(i + 1);
 
             for (j, target_char) in target.chars().enumerate() {
                 let current_dist = next_dist;
 
-                let mut dist_if_substitute = unsafe { self.cache.get_unchecked(j).clone() };
+                let dist_if_substitute = unsafe { self.cache.get_unchecked(j).clone() };
+                let mut dist_if_substitute = Wrapping(dist_if_substitute);
                 if source_char != target_char {
-                    dist_if_substitute += 1;
+                    dist_if_substitute += Wrapping(1);
                 }
 
-                let dist_if_insert = current_dist + 1;
+                let dist_if_insert = current_dist + Wrapping(1);
                 let dist_if_delete = unsafe { self.cache.get_unchecked(j + 1).clone() } + 1;
 
-                next_dist = min(dist_if_delete, min(dist_if_insert, dist_if_substitute));
+                next_dist = min(
+                    Wrapping(dist_if_delete),
+                    min(dist_if_insert, dist_if_substitute),
+                );
 
                 unsafe {
-                    *self.cache.get_unchecked_mut(j) = current_dist;
+                    *self.cache.get_unchecked_mut(j) = current_dist.0;
                 }
             }
 
             unsafe {
-                *self.cache.get_unchecked_mut(target_len) = next_dist;
+                *self.cache.get_unchecked_mut(target_len) = next_dist.0;
             }
         }
 
@@ -68,7 +73,7 @@ impl LevenshteinDistanceCalc {
 
 // for some reason this is faster than std::cmp::min (1.8sec -> 1.5sec)
 // maybe inlining is better for some reason? a bit worrying
-fn min(a: usize, b: usize) -> usize {
+fn min(a: Wrapping<usize>, b: Wrapping<usize>) -> Wrapping<usize> {
     if a < b {
         a
     } else {
