@@ -4,15 +4,16 @@
     <generated />
   </component>
   <component name="CMakeSettings">
-    <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
-    </configurations>
+    <configurations />
   </component>
   <component name="CargoProjects">
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28880f5c-cb96-49c6-a182-5ab0405a4878" name="Default Changelist" comment="" />
+    <list default="true" id="49189160-6155-45a6-906e-1dbf88e457ab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/levenshtein_distance.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/levenshtein_distance.rs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,20 +22,13 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Rust File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="444adb4n" />
+    <option name="directoryName" value="pzqd868t" />
   </component>
-  <component name="ProjectId" id="1i1hMhRgpACdFNyJRZ2hxlLYr7M" />
+  <component name="ProjectId" id="1i1l7giaivV5Va22ACPHXi39n99" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -43,28 +37,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="org.rust.disableDetachedFileInspection/home/jesse/CLionProjects/levenshtein/src/levenshtein_distance.rs" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+    <configuration name="Run levenshtein" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="channel" value="DEFAULT" />
-      <option name="command" value="run --package christianfscott --bin christianfscott" />
+      <option name="command" value="run --package levenshtein --bin levenshtein" />
       <option name="allFeatures" value="false" />
       <option name="emulateTerminal" value="false" />
       <option name="backtrace" value="SHORT" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <envs />
-      <method v="2">
-        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
-      <option name="channel" value="DEFAULT" />
-      <option name="command" value="run" />
-      <option name="allFeatures" value="false" />
-      <option name="emulateTerminal" value="false" />
-      <option name="backtrace" value="SHORT" />
       <envs />
       <method v="2">
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
@@ -75,19 +60,29 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo.Run levenshtein" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="28880f5c-cb96-49c6-a182-5ab0405a4878" name="Default Changelist" comment="" />
-      <created>1601080959732</created>
+      <changelist id="49189160-6155-45a6-906e-1dbf88e457ab" name="Default Changelist" comment="" />
+      <created>1601082814274</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1601080959732</updated>
-      <workItem from="1601080961473" duration="664000" />
+      <updated>1601082814274</updated>
+      <workItem from="1601082815560" duration="7287000" />
+      <workItem from="1601110197076" duration="2626000" />
+      <workItem from="1601112835047" duration="45000" />
+      <workItem from="1601112905175" duration="25000" />
+      <workItem from="1601112967825" duration="994000" />
     </task>
     <servers />
   </component>
@@ -95,48 +90,41 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1874" height="344" key="GridCell.Tab.0.bottom" timestamp="1601081486573">
+    <state x="2663" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1601112919227">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="344" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601081486573" />
-    <state width="1874" height="344" key="GridCell.Tab.0.center" timestamp="1601081486573">
+    <state x="2663" y="310" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601112919227" />
+    <state width="1874" height="278" key="GridCell.Tab.0.bottom" timestamp="1601113071407">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="344" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601081486573" />
-    <state width="1874" height="344" key="GridCell.Tab.0.left" timestamp="1601081486573">
+    <state width="1874" height="278" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601113071407" />
+    <state width="1874" height="278" key="GridCell.Tab.0.center" timestamp="1601113071407">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="344" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601081486573" />
-    <state width="1874" height="344" key="GridCell.Tab.0.right" timestamp="1601081486573">
+    <state width="1874" height="278" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601113071407" />
+    <state width="1874" height="278" key="GridCell.Tab.0.left" timestamp="1601113071407">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="344" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601081486573" />
-    <state width="1874" height="344" key="GridCell.Tab.1.bottom" timestamp="1601081486573">
+    <state width="1874" height="278" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601113071407" />
+    <state width="1874" height="278" key="GridCell.Tab.0.right" timestamp="1601113071407">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="344" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601081486573" />
-    <state width="1874" height="344" key="GridCell.Tab.1.center" timestamp="1601081486573">
+    <state width="1874" height="278" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601113071407" />
+    <state width="1874" height="344" key="GridCell.Tab.1.bottom" timestamp="1601112822594">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="344" key="GridCell.Tab.1.center/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601081486573" />
-    <state width="1874" height="344" key="GridCell.Tab.1.left" timestamp="1601081486573">
+    <state width="1874" height="344" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601112822594" />
+    <state width="1874" height="344" key="GridCell.Tab.1.center" timestamp="1601112822594">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="344" key="GridCell.Tab.1.left/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601081486573" />
-    <state width="1874" height="344" key="GridCell.Tab.1.right" timestamp="1601081486573">
+    <state width="1874" height="344" key="GridCell.Tab.1.center/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601112822594" />
+    <state width="1874" height="344" key="GridCell.Tab.1.left" timestamp="1601112822594">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="344" key="GridCell.Tab.1.right/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601081486573" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/main.rs</url>
-          <line>5</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="1874" height="344" key="GridCell.Tab.1.left/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601112822594" />
+    <state width="1874" height="344" key="GridCell.Tab.1.right" timestamp="1601112822594">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="344" key="GridCell.Tab.1.right/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1601112822594" />
   </component>
 </project>
