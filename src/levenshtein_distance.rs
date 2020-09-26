@@ -6,7 +6,9 @@ pub struct LevenshteinDistanceCalc {
 
 impl LevenshteinDistanceCalc {
     pub fn new() -> Self {
-        Self { cache: Vec::new() }
+        Self {
+            cache: Vec::with_capacity(100)
+        }
     }
 
     fn build_cache(&mut self, target_len: usize) {
