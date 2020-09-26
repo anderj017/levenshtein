@@ -12,8 +12,8 @@ fn main() {
 
     {
         for _ in 0..10000 {
-            let mut last_value = "";
-            for line in &lines {
+            let mut last_value = unsafe { lines.get_unchecked(0) };
+            for line in lines.iter().skip(1) {
                 leven_dist_calc.calc(last_value, line);
                 last_value = line;
             }

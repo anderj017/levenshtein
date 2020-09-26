@@ -1,4 +1,3 @@
-use std::cmp::max;
 use std::num::Wrapping;
 
 pub struct LevenshteinDistanceCalc {
@@ -15,8 +14,8 @@ impl LevenshteinDistanceCalc {
     fn build_cache(&mut self, target_len: usize) {
         // if we know the max length we can pre-allocate and don't need this
         // save a branch that'll never be called
-        let alloc_size = max(self.cache.len(), target_len);
-        self.cache.reserve(alloc_size);
+        //let alloc_size = max(self.cache.len(), target_len);
+        //self.cache.reserve(alloc_size);
 
         self.cache.clear();
         for i in 0..=target_len {
@@ -25,13 +24,17 @@ impl LevenshteinDistanceCalc {
     }
 
     pub fn calc(&mut self, source: &str, target: &str) -> usize {
-        if source.is_empty() {
-            return target.len();
-        }
+        //assert!(!source.is_empty());
+        // if we can assume neither is empty, we don't need these branches
+        // if source.is_empty() {
+        //     return target.len();
+        // }
 
-        if target.is_empty() {
-            return source.len();
-        }
+        // this was already not possible (redundant branch)
+        //assert!(!target.is_empty());
+        //if target.is_empty() {
+        //    return source.len();
+        //}
 
         let target_len = target.len();
 
