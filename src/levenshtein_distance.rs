@@ -1,3 +1,5 @@
+use std::cmp::max;
+
 pub struct LevenshteinDistanceCalc {
     cache: Vec<usize>,
 }
@@ -5,6 +7,16 @@ pub struct LevenshteinDistanceCalc {
 impl LevenshteinDistanceCalc {
     pub fn new() -> Self {
         Self { cache: Vec::new() }
+    }
+
+    fn build_cache(&mut self, target_len: usize) {
+        let alloc_size = max(self.cache.len(), target_len);
+        self.cache.reserve(alloc_size);
+        self.cache.clear();
+
+        for i in 0..=target_len {
+            self.cache.push(i);
+        }
     }
 
     pub fn calc(&mut self, source: &str, target: &str) -> usize {
@@ -18,7 +30,7 @@ impl LevenshteinDistanceCalc {
 
         let target_len = target.len();
 
-        self.cache = (0..=target_len).collect();
+        self.build_cache(target_len);
 
         for (i, source_char) in source.chars().enumerate() {
             let mut next_dist = i + 1;
